@@ -25,12 +25,15 @@ public class Project_Adactin {
 		driver.findElement(By.xpath("//select[@name='hotels']")).sendKeys("Hotel Cornice");
 		driver.findElement(By.xpath("//select[@name='room_type']")).sendKeys("Standard");
 		Thread.sleep(5000);
+		driver.findElement(By.cssSelector("#room_nos")).sendKeys("1 -One");
 		driver.findElement(By.xpath("//input[@name='datepick_in']")).clear();
 		driver.findElement(By.xpath("//input[@name='datepick_out']")).clear();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@name='datepick_in']")).sendKeys("20/11/2022");
 		driver.findElement(By.xpath("//input[@name='datepick_out']")).sendKeys("22/11/2022");
 		driver.findElement(By.xpath("//input[@type='submit']")).click();
+		driver.findElement(By.cssSelector("#adult_room")).sendKeys("1 -One");
+		driver.findElement(By.cssSelector("#child_room")).sendKeys("0 -None");
 		Thread.sleep(3000);
 		//Select Hotel
 		driver.findElement(By.cssSelector("input#radiobutton_0")).click();
@@ -45,9 +48,10 @@ public class Project_Adactin {
 		driver.findElement(By.xpath("//select[@name='cc_type']")).sendKeys("VISA");
 		driver.findElement(By.xpath("//select[@name='cc_exp_month']")).sendKeys("September");
 		driver.findElement(By.xpath("//select[@name='cc_exp_year']")).sendKeys("2022");
-		driver.findElement(By.xpath("//input[@name='cc_cvv']")).sendKeys("123");
 		driver.findElement(By.xpath("//input[@type='button']")).click();
-		Thread.sleep(10000);
+		Thread.sleep(15000);
+		driver.findElement(By.xpath("//input[@id='logout']")).click();
+		Thread.sleep(8000);
         // TakesScreenshot
 	    TakesScreenshot screen = (TakesScreenshot) driver;
 		File src = screen.getScreenshotAs(OutputType.FILE);
